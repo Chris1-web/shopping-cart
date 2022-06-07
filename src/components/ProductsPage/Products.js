@@ -1,5 +1,7 @@
 import React from "react";
 
+const productsImages = [];
+
 const Products = () => {
   return (
     <div>
