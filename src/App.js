@@ -4,7 +4,7 @@ import Nav from "./components/Navigation/Nav";
 
 function App() {
   return (
-    <div className="container">
+    <div>
       <Nav />
       <Outlet />
     </div>

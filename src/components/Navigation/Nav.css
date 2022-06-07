@@ -5,10 +5,24 @@ ul {
 nav ul {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 2rem;
 }
 
 nav .right {
   display: flex;
   gap: 1.5rem;
+}
+
+.logo {
+  width: 3.5rem;
+}
+
+.cart-logo {
+  width: 3rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: black;
 }

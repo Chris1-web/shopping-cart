@@ -1,11 +1,15 @@
 import "./Nav.css";
 import { Link } from "react-router-dom";
+import logo from "../images/logo.png";
+import cartLogo from "../images/cart-logo.png";
 
 const Nav = () => {
   return (
-    <nav>
+    <nav className="container">
       <ul>
-        <li>LOGO</li>
+        <li>
+          <img src={logo} alt="page logo" className="logo" />
+        </li>
         <div className="right">
           <li>
             <Link to="/">Home</Link>
@@ -14,7 +18,9 @@ const Nav = () => {
             <Link to="shop">Shop</Link>
           </li>
           <li>
-            <Link to="cart">Cart</Link>
+            <Link to="cart">
+              <img src={cartLogo} alt="page logo" className="cart-logo" />
+            </Link>
           </li>
         </div>
       </ul>
