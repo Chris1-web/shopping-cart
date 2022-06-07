@@ -16,5 +16,5 @@ html {
 .container {
   max-width: 120rem;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1rem 0;
 }

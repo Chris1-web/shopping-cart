@@ -1,0 +1,32 @@
+.home {
+  width: auto;
+  height: 93vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  position: relative;
+}
+
+.home div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.home h1 {
+  font-size: 5rem;
+  color: white;
+  margin-bottom: 2rem;
+}
+
+.home div a {
+  padding: 1rem 1.5rem;
+  background-color: #284834;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 1.5rem;
+  text-decoration: none;
+}

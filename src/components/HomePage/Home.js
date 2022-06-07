@@ -1,10 +1,20 @@
-import React from "react";
+import { Link } from "react-router-dom";
+import heroImage from "../images/mountain-bicycle.jpg";
+import "./Home.css";
 
 const Home = () => {
   return (
-    <div>
-      <h1>This is the homepage</h1>
-    </div>
+    <main
+      className="home"
+      style={{
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.2),rgba(0, 0, 0, 0.5)) , url(${heroImage})`,
+      }}
+    >
+      <div>
+        <h1>KING OF THE ROAD</h1>
+        <Link to="shop">SHOP NOW</Link>
+      </div>
+    </main>
   );
 };
 

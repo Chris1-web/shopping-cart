@@ -2,6 +2,10 @@ ul {
   list-style: none;
 }
 
+nav {
+  height: 7vh;
+}
+
 nav ul {
   display: flex;
   justify-content: space-between;
@@ -12,14 +16,16 @@ nav ul {
 nav .right {
   display: flex;
   gap: 1.5rem;
+  align-items: center;
 }
 
 .logo {
-  width: 3.5rem;
+  width: 3rem;
 }
 
 .cart-logo {
   width: 3rem;
+  height: auto;
 }
 
 nav a {
