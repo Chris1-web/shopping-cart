@@ -5,10 +5,12 @@ import cartLogo from "../images/cart-logo.png";
 
 const Nav = () => {
   return (
-    <nav className="container">
+    <nav>
       <ul>
         <li>
-          <img src={logo} alt="page logo" className="logo" />
+          <Link to="/">
+            <img src={logo} alt="page logo" className="logo" />
+          </Link>
         </li>
         <div className="right">
           <li>
