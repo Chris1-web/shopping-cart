@@ -1,9 +1,12 @@
+import { Outlet } from "react-router-dom";
 import "./App.css";
+import Nav from "./components/Navigation/Nav";
 
 function App() {
   return (
-    <div>
-      <h1>Hello World</h1>
+    <div className="container">
+      <Nav />
+      <Outlet />
     </div>
   );
 }

@@ -1,0 +1,14 @@
+ul {
+  list-style: none;
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+
+nav .right {
+  display: flex;
+  gap: 1.5rem;
+}

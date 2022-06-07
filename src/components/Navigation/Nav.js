@@ -1,9 +1,23 @@
-import React from "react";
+import "./Nav.css";
+import { Link } from "react-router-dom";
 
 const Nav = () => {
   return (
     <nav>
-      <h1>This is the navigation</h1>
+      <ul>
+        <li>LOGO</li>
+        <div className="right">
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="shop">Shop</Link>
+          </li>
+          <li>
+            <Link to="cart">Cart</Link>
+          </li>
+        </div>
+      </ul>
     </nav>
   );
 };
