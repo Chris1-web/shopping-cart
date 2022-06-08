@@ -1,11 +1,16 @@
 import React from "react";
 
-const Product = () => {
+export default function Product(props) {
   return (
     <div>
-      <h1>This is the individual Product page</h1>
+      <img src={props.src} alt="product" />
+      <div className="product-information">
+        <h2>{props.product.name}</h2>
+        <p>{props.price}</p>
+        <p>{props.description}</p>
+        <p>Counter</p>
+        <button>Add To Cart</button>
+      </div>
     </div>
   );
-};
-
-export default Product;
+}
