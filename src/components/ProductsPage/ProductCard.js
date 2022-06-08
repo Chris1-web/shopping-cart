@@ -1,15 +1,6 @@
-export default function ProductCard({ product }) {
-  const showCurrentProduct = (product) => {
-    console.log(product.name);
-  };
-
+export default function ProductCard({ product, showClickedProduct }) {
   return (
-    <div
-      className="product-card"
-      onClick={() => {
-        showCurrentProduct(product);
-      }}
-    >
+    <div className="product-card">
       <img
         src={product.src}
         alt={product.name}

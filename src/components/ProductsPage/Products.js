@@ -7,7 +7,7 @@ import RenaissanceBicycle from "../images/Renaissance-Street-Bicycle.jpg";
 import SafeRoadBicycle from "../images/safe-road-bicycle.jpg";
 import TouristBicycle from "../images/Tourist-Bicycle.jpg";
 import TwinBicycle from "../images/Twin-Bicycle.jpg";
-import MountainBicycle from "../images/mountain-bicycle.jpg";
+import MountainBicycle from "../images/mountainBike.jpg";
 import AdultChoiceBicycle from "../images/AdultChoice.jpg";
 
 const productsImages = [
