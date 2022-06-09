@@ -81,14 +81,13 @@ export default function Products() {
   };
 
   const changeQuantity = (clickedProduct, newQuantity) => {
-    if (!newQuantity) return;
+    if (!newQuantity || newQuantity === 0) return;
     // get the index of the chosen product
     const chosenProductIndex = products
       .map((product) => product.name)
       .indexOf(clickedProduct.name);
     // replace current quantity with newly written quanitity
     products[chosenProductIndex].quantity = Number(newQuantity);
-    console.log(newQuantity, clickedProduct);
   };
 
   return (

@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+// import uniqid from "uniqid";
+// uniqid();
 
 export default function ProductCard({
   product,
@@ -15,7 +17,6 @@ export default function ProductCard({
 
   useEffect(() => {
     if (changeInput) {
-      setInputValue(inputValue);
       changeQuantity(product, inputValue);
       setChangeInput(false);
     }
@@ -24,13 +25,15 @@ export default function ProductCard({
 
   const increaseQuantity = (e) => {
     e.preventDefault();
-    setInputValue((prevValue) => Number(prevValue) + 1);
+    setInputValue((prevValue) => +prevValue + 1);
     setChangeInput(true);
   };
 
   const decreaseQuantity = (e) => {
     e.preventDefault();
-    inputValue >= 1 && setInputValue((prevValue) => Number(prevValue) - 1);
+    // do not go lower if input value is already 1
+    if (inputValue <= 1) return;
+    setInputValue((prevValue) => +prevValue - 1);
     setChangeInput(true);
   };
 
@@ -41,7 +44,6 @@ export default function ProductCard({
   };
 
   const addToCart = (product) => {
-    // add product to cart on click
     addProductToCart(product);
   };
 
@@ -62,7 +64,6 @@ export default function ProductCard({
           type="number"
           min="1"
           value={inputValue}
-          // placeholder={product.quantity}
           onChange={(e) => changeInputQuantity(e)}
         />
         <button className="increment" onClick={(e) => increaseQuantity(e)}>
