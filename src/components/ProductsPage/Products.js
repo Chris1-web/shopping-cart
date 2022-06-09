@@ -75,7 +75,7 @@ export default function Products() {
     setProducts([...productsImages]);
   }, []);
 
-  const addQuantity = (clickedProduct, addedQuantity) => {
+  const addQuantity = (clickedProduct, newQuantity) => {
     // get chosen product by name out of all products
     const chosenProduct = products.filter(
       (product) => product.name === clickedProduct.name
@@ -85,7 +85,7 @@ export default function Products() {
       .map((product) => product.name)
       .indexOf(chosenProduct.name);
     //  subtract quantity from chosen product
-    products[chosenProductIndex].quantity += addedQuantity;
+    products[chosenProductIndex].quantity += newQuantity;
     setProducts([...products]);
   };
 
@@ -104,6 +104,10 @@ export default function Products() {
     setProducts([...products]);
   };
 
+  const changeQuantity = (clickedProduct, newQuantity) => {
+    console.log(newQuantity, clickedProduct);
+  };
+
   return (
     <main className="products">
       {products.map((product, index) => (
@@ -111,6 +115,7 @@ export default function Products() {
           product={product}
           addQuantity={addQuantity}
           reduceQuantity={reduceQuantity}
+          changeQuantity={changeQuantity}
           key={index}
         />
       ))}

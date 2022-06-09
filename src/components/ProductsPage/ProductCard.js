@@ -1,4 +1,28 @@
-export default function ProductCard({ product, addQuantity, reduceQuantity }) {
+import { useEffect, useState } from "react";
+
+export default function ProductCard({
+  product,
+  addQuantity,
+  reduceQuantity,
+  changeQuantity,
+}) {
+  const [inputValue, setInputValue] = useState("");
+  const [changeInput, setChangeInput] = useState(false);
+
+  useEffect(() => {
+    setInputValue(product.quantity);
+    return () => setInputValue(product.quantity);
+  }, []);
+
+  useEffect(() => {
+    if (changeInput) {
+      setInputValue(inputValue);
+      console.log(inputValue);
+      changeQuantity(product, inputValue);
+    }
+    return () => setChangeInput(false);
+  }, [inputValue]);
+
   const increaseQuantity = (e, product) => {
     e.preventDefault();
     addQuantity(product, 1);
@@ -9,8 +33,9 @@ export default function ProductCard({ product, addQuantity, reduceQuantity }) {
     reduceQuantity(product, 1);
   };
 
-  const changeQuatity = () => {
-    console.log("input is changed");
+  const changeInputQuantity = (e, product) => {
+    setInputValue(e.target.value);
+    setChangeInput(true);
   };
 
   return (
@@ -32,8 +57,9 @@ export default function ProductCard({ product, addQuantity, reduceQuantity }) {
         <input
           type="number"
           min="1"
-          value={product.quantity}
-          onChange={changeQuatity}
+          value={inputValue}
+          // placeholder={product.quantity}
+          onChange={(e) => changeInputQuantity(e, product)}
         />
         <button
           className="increment"
