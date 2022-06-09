@@ -102,12 +102,12 @@
 
 .product-card button:disabled {
   background-color: #6d937b;
-  color: #999999;
+  color: #cccccc;
 }
 
 .product-card button:disabled:hover {
   background-color: #6d937b;
-  color: #999999;
+  color: #cccccc;
   cursor: not-allowed;
   box-shadow: none;
 }

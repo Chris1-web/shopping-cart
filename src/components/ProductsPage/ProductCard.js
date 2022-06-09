@@ -49,7 +49,7 @@ export default function ProductCard({
   };
 
   return (
-    <div className="product-card">
+    <article className="product-card">
       <img
         src={product.src}
         alt={product.name}
@@ -65,6 +65,7 @@ export default function ProductCard({
           type="number"
           min="1"
           value={inputValue}
+          placeholder="1"
           onChange={(e) => changeInputQuantity(e)}
         />
         <button className="increment" onClick={(e) => increaseQuantity(e)}>
@@ -78,6 +79,6 @@ export default function ProductCard({
       >
         Add To Cart
       </button>
-    </div>
+    </article>
   );
 }
