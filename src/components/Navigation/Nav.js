@@ -17,13 +17,16 @@ const Nav = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
+            <Link to="about">About</Link>
+          </li>
+          <li>
             <Link to="shop">Shop</Link>
           </li>
           <li>
-            <Link to="cart">
+            <div className="cart">
               <img src={cartLogo} alt="page logo" className="cart-logo" />
               <p className="cart-product-number">1</p>
-            </Link>
+            </div>
           </li>
         </div>
       </ul>
