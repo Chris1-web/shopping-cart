@@ -75,10 +75,44 @@ export default function Products() {
     setProducts([...productsImages]);
   }, []);
 
+  const addQuantity = (clickedProduct, addedQuantity) => {
+    // get chosen product by name out of all products
+    const chosenProduct = products.filter(
+      (product) => product.name === clickedProduct.name
+    )[0];
+    // get the index of the chosen product
+    const chosenProductIndex = products
+      .map((product) => product.name)
+      .indexOf(chosenProduct.name);
+    //  subtract quantity from chosen product
+    products[chosenProductIndex].quantity += addedQuantity;
+    setProducts([...products]);
+  };
+
+  const reduceQuantity = (clickedProduct, removedQuantity) => {
+    const chosenProduct = products.filter(
+      (product) => product.name === clickedProduct.name
+    )[0];
+    // get the index of the chosen product
+    const chosenProductIndex = products
+      .map((product) => product.name)
+      .indexOf(chosenProduct.name);
+    //  subtract quantity from chosen product
+    if (products[chosenProductIndex].quantity >= 1) {
+      products[chosenProductIndex].quantity -= removedQuantity;
+    }
+    setProducts([...products]);
+  };
+
   return (
     <main className="products">
       {products.map((product, index) => (
-        <ProductCard product={product} key={index} />
+        <ProductCard
+          product={product}
+          addQuantity={addQuantity}
+          reduceQuantity={reduceQuantity}
+          key={index}
+        />
       ))}
     </main>
   );
