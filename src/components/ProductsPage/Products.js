@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import "./Products.css";
 import ProductCard from "./ProductCard";
 import cheapRoadBicycle from "../images/cheap-Road-Bike.jpg";
@@ -9,9 +10,6 @@ import TouristBicycle from "../images/Tourist-Bicycle.jpg";
 import TwinBicycle from "../images/Twin-Bicycle.jpg";
 import MountainBicycle from "../images/mountainBike.jpg";
 import AdultChoiceBicycle from "../images/AdultChoice.jpg";
-import { useEffect, useState } from "react";
-import cartLogo from "../images/cart-logo.png";
-// import Cart from "../cartPage/Cart";
 
 const productsImages = [
   {
