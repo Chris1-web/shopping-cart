@@ -22,6 +22,7 @@ const Nav = () => {
           <li>
             <Link to="cart">
               <img src={cartLogo} alt="page logo" className="cart-logo" />
+              <p className="cart-product-number">1</p>
             </Link>
           </li>
         </div>
