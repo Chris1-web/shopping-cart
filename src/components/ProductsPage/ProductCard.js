@@ -31,14 +31,15 @@ export default function ProductCard({
 
   const decreaseQuantity = (e) => {
     e.preventDefault();
-    // do not go lower if input value is already 1
-    if (inputValue <= 1) return;
+    // do not go lower if input value is already 0
+    if (inputValue <= 0) return;
+    console.log(inputValue);
     setInputValue((prevValue) => +prevValue - 1);
     setChangeInput(true);
   };
 
   const changeInputQuantity = (e) => {
-    if (e.target.value < 0) return;
+    if (+e.target.value < 0) return;
     setInputValue(e.target.value);
     setChangeInput(true);
   };
@@ -70,7 +71,11 @@ export default function ProductCard({
           +
         </button>
       </div>
-      <button className="add-to-cart-btn" onClick={() => addToCart(product)}>
+      <button
+        className="add-to-cart-btn"
+        disabled={!inputValue || +inputValue <= 0}
+        onClick={() => addToCart(product)}
+      >
         Add To Cart
       </button>
     </div>

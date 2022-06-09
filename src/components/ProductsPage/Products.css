@@ -99,3 +99,15 @@
 .add-to-cart-btn {
   width: 100%;
 }
+
+.product-card button:disabled {
+  background-color: #6d937b;
+  color: #999999;
+}
+
+.product-card button:disabled:hover {
+  background-color: #6d937b;
+  color: #999999;
+  cursor: not-allowed;
+  box-shadow: none;
+}
