@@ -70,41 +70,24 @@ const productsImages = [
 
 export default function Products() {
   const [products, setProducts] = useState([]);
+  const [cartProduct, setCartProduct] = useState([]);
 
   useEffect(() => {
     setProducts([...productsImages]);
   }, []);
 
-  const addQuantity = (clickedProduct, newQuantity) => {
-    // get chosen product by name out of all products
-    const chosenProduct = products.filter(
-      (product) => product.name === clickedProduct.name
-    )[0];
-    // get the index of the chosen product
-    const chosenProductIndex = products
-      .map((product) => product.name)
-      .indexOf(chosenProduct.name);
-    //  subtract quantity from chosen product
-    products[chosenProductIndex].quantity += newQuantity;
-    setProducts([...products]);
-  };
-
-  const reduceQuantity = (clickedProduct, removedQuantity) => {
-    const chosenProduct = products.filter(
-      (product) => product.name === clickedProduct.name
-    )[0];
-    // get the index of the chosen product
-    const chosenProductIndex = products
-      .map((product) => product.name)
-      .indexOf(chosenProduct.name);
-    //  subtract quantity from chosen product
-    if (products[chosenProductIndex].quantity >= 1) {
-      products[chosenProductIndex].quantity -= removedQuantity;
-    }
-    setProducts([...products]);
+  const addProductToCart = (product) => {
+    console.log(product);
   };
 
   const changeQuantity = (clickedProduct, newQuantity) => {
+    if (!newQuantity) return;
+    // get the index of the chosen product
+    const chosenProductIndex = products
+      .map((product) => product.name)
+      .indexOf(clickedProduct.name);
+    // replace current quantity with newly written quanitity
+    products[chosenProductIndex].quantity = Number(newQuantity);
     console.log(newQuantity, clickedProduct);
   };
 
@@ -113,9 +96,8 @@ export default function Products() {
       {products.map((product, index) => (
         <ProductCard
           product={product}
-          addQuantity={addQuantity}
-          reduceQuantity={reduceQuantity}
           changeQuantity={changeQuantity}
+          addProductToCart={addProductToCart}
           key={index}
         />
       ))}

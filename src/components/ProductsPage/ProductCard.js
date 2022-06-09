@@ -2,9 +2,8 @@ import { useEffect, useState } from "react";
 
 export default function ProductCard({
   product,
-  addQuantity,
-  reduceQuantity,
   changeQuantity,
+  addProductToCart,
 }) {
   const [inputValue, setInputValue] = useState("");
   const [changeInput, setChangeInput] = useState(false);
@@ -17,25 +16,33 @@ export default function ProductCard({
   useEffect(() => {
     if (changeInput) {
       setInputValue(inputValue);
-      console.log(inputValue);
       changeQuantity(product, inputValue);
+      setChangeInput(false);
     }
     return () => setChangeInput(false);
   }, [inputValue]);
 
-  const increaseQuantity = (e, product) => {
+  const increaseQuantity = (e) => {
     e.preventDefault();
-    addQuantity(product, 1);
+    setInputValue((prevValue) => Number(prevValue) + 1);
+    setChangeInput(true);
   };
 
   const decreaseQuantity = (e) => {
     e.preventDefault();
-    reduceQuantity(product, 1);
+    inputValue >= 1 && setInputValue((prevValue) => Number(prevValue) - 1);
+    setChangeInput(true);
   };
 
-  const changeInputQuantity = (e, product) => {
+  const changeInputQuantity = (e) => {
+    if (e.target.value < 0) return;
     setInputValue(e.target.value);
     setChangeInput(true);
+  };
+
+  const addToCart = (product) => {
+    // add product to cart on click
+    addProductToCart(product);
   };
 
   return (
@@ -48,10 +55,7 @@ export default function ProductCard({
       <h3>{product.name}</h3>
       <p>${product.price}</p>
       <div className="form">
-        <button
-          className="decrement"
-          onClick={(e) => decreaseQuantity(e, product)}
-        >
+        <button className="decrement" onClick={(e) => decreaseQuantity(e)}>
           -
         </button>
         <input
@@ -59,16 +63,15 @@ export default function ProductCard({
           min="1"
           value={inputValue}
           // placeholder={product.quantity}
-          onChange={(e) => changeInputQuantity(e, product)}
+          onChange={(e) => changeInputQuantity(e)}
         />
-        <button
-          className="increment"
-          onClick={(e) => increaseQuantity(e, product)}
-        >
+        <button className="increment" onClick={(e) => increaseQuantity(e)}>
           +
         </button>
       </div>
-      <button className="add-to-cart-btn">Add To Cart</button>
+      <button className="add-to-cart-btn" onClick={() => addToCart(product)}>
+        Add To Cart
+      </button>
     </div>
   );
 }
