@@ -32,10 +32,12 @@ const Nav = () => {
               <Link to="shop">Shop</Link>
             </li>
             <li>
-              <div className="cart" onClick={toggleCart}>
-                <img src={cartLogo} alt="page logo" className="cart-logo" />
-                <p className="cart-product-number">1</p>
-              </div>
+              <Link to="shop">
+                <div className="cart" onClick={toggleCart}>
+                  <img src={cartLogo} alt="page logo" className="cart-logo" />
+                  <p className="cart-product-number">1</p>
+                </div>
+              </Link>
             </li>
           </div>
         </ul>
