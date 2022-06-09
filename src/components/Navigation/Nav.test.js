@@ -11,7 +11,6 @@ describe("renders Navigation Component", () => {
     );
     const nav = screen.getByRole("navigation");
     expect(nav).toBeInTheDocument();
-    expect(nav).toHaveClass("container");
   });
   test("displays for items in list", () => {
     render(
@@ -22,6 +21,6 @@ describe("renders Navigation Component", () => {
     const listContainer = screen.getByRole("list");
     const listItem = screen.getAllByRole("listitem");
     expect(listContainer).toBeInTheDocument();
-    expect(listItem.length).toEqual(4);
+    expect(listItem.length).toEqual(5);
   });
 });

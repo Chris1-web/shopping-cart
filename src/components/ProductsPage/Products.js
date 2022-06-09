@@ -10,6 +10,8 @@ import TwinBicycle from "../images/Twin-Bicycle.jpg";
 import MountainBicycle from "../images/mountainBike.jpg";
 import AdultChoiceBicycle from "../images/AdultChoice.jpg";
 import { useEffect, useState } from "react";
+import cartLogo from "../images/cart-logo.png";
+// import Cart from "../cartPage/Cart";
 
 const productsImages = [
   {
@@ -70,7 +72,7 @@ const productsImages = [
 
 export default function Products() {
   const [products, setProducts] = useState([]);
-  const [cartProduct, setCartProduct] = useState([]);
+  // const [cartProduct, setCartProduct] = useState([]);
 
   useEffect(() => {
     setProducts([...productsImages]);

@@ -2,7 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import App from "./App";
 import Home from "./components/HomePage/Home";
 import Products from "./components/ProductsPage/Products";
-import Cart from "./components/CartPage/Cart";
+import About from "./components/AboutPage/About";
 
 export default function RouteSwitch() {
   return (
@@ -11,7 +11,7 @@ export default function RouteSwitch() {
         <Route path="/" element={<App />}>
           <Route index element={<Home />} />
           <Route path="shop" element={<Products />} />
-          <Route path="cart" element={<Cart />} />
+          <Route path="about" element={<About />} />
         </Route>
       </Routes>
     </BrowserRouter>

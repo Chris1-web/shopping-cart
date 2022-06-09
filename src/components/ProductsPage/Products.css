@@ -1,3 +1,8 @@
+/* cart relative to main section */
+#root {
+  position: relative;
+}
+
 .products {
   padding: 2rem 1.5rem;
   display: grid;
@@ -110,4 +115,71 @@
   color: #cccccc;
   cursor: not-allowed;
   box-shadow: none;
+}
+
+/* to be transferred cart overview section */
+.overlay-background {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  height: 100%;
+  width: 60%;
+  background-color: rgba(204, 204, 204, 0.5);
+}
+
+.cart-overview-top {
+  height: 10vh;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0.5rem 0.3rem 0.5rem #cccccc;
+}
+
+.cart-overview-top .cart {
+  position: relative;
+}
+
+.cart-overview-top .cart-product-number {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-color: pink;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+.cart-overview-top h2 {
+  font-size: 1.8rem;
+}
+
+.cart-section {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+.cart-section {
+  width: 40%;
+  height: 100%;
+  background-color: white;
+}
+
+.cart-overview-top img {
+  width: 4rem;
+  height: 4rem;
+}
+
+.cart-overview-top .close {
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  border: 0.2rem solid #cccccc;
+  color: #cccccc;
+}
+
+.cart-overview-top .close:hover {
+  border: 0.2rem solid #0c4b23;
+  color: #0c4b23;
 }
