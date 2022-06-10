@@ -14,25 +14,26 @@ const calculateCartTotal = (products) => {
   );
 };
 
+const calculateCartQuantity = (products) => {
+  return products.reduce(
+    (prevProduct, currProduct) => prevProduct + currProduct.quantity,
+    0
+  );
+};
+
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [showCart, setShowCart] = useState(false);
   const [cartProducts, setCartProducts] = useState([]);
-  const [cartTotalCost, setCartTotalCost] = useState(0);
 
   // on component mount, copy products images into products array
   useEffect(() => {
     setProducts([...productsImages]);
   }, []);
 
-  //if cart product changes update, total cost
-  useEffect(() => {
-    const cartTotalCalcutation = calculateCartTotal(cartProducts);
-    setCartTotalCost(cartTotalCalcutation);
-  }, [cartProducts]);
-
   const addProductToCart = (product) => {
-    // create total cost property in product
+    // if product is already in cart, do not create a new product
+    if (cartProducts.includes(product)) return;
     setCartProducts((prevCartProduct) => {
       return [...prevCartProduct, product];
     });
@@ -57,7 +58,7 @@ export default function Products() {
     <>
       <div className="cart" onClick={toggleCart}>
         <img src={cartLogo} alt="page logo" className="cart-logo" />
-        <p className="cart-product-number">1</p>
+        <p className="cart-product-number">{cartProducts.length}</p>
       </div>
       <main className="products">
         {products.map((product, index) => (
@@ -87,11 +88,11 @@ export default function Products() {
               {cartProducts.map((product, index) => (
                 <Cart product={product} key={index} />
               ))}
-              {/* card checkout section */}
+              {/* card checkout section styling */}
               <aside className="checkout">
                 <div className="checkout-top">
                   <p>Subtotal</p>
-                  <p className="total">${cartTotalCost}</p>
+                  <p className="total">${calculateCartTotal(cartProducts)}</p>
                 </div>
                 <button>Checkout</button>
               </aside>
