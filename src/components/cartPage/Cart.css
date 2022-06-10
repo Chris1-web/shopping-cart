@@ -48,19 +48,46 @@
   background-color: white;
 }
 
+.cart-section .bottom {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem;
+}
+
+.cart-section .bottom input[type="number"] {
+  width: 30%;
+  height: 3rem;
+  border: none;
+  text-align: center;
+  box-shadow: 0.2rem 0.2rem 0.5rem white;
+}
+
+.cart-section .bottom .form button {
+  padding: 0 1rem;
+  height: 2rem;
+  background-color: #3d6f4f;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  box-shadow: 0.2rem 0.2rem 0.5rem #0c4b23;
+  font-size: 2rem;
+}
+
 .cart-overview-top img {
   width: 4rem;
   height: 4rem;
 }
 
-.cart-overview-top .close {
+.cart-overview-top .close,
+.cart-section .remove-item {
   padding: 0.5rem 1rem;
   background-color: transparent;
   border: 0.2rem solid #cccccc;
   color: #cccccc;
 }
 
-.cart-overview-top .close:hover {
+.cart-overview-top .close:hover,
+.cart-section .remove-item:hover {
   border: 0.2rem solid #0c4b23;
   color: #0c4b23;
 }

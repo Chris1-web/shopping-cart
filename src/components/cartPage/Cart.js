@@ -28,7 +28,12 @@ export default function Cart({ toggleCart }) {
           </div>
         </div>
         <div className="bottom">
-          <p>Bottom</p>
+          <div className="form">
+            <button className="decrement">-</button>
+            <input type="number" min="1" value="2" placeholder="1" />
+            <button className="increment">+</button>
+          </div>
+          <button className="remove-item">x Remove Item</button>
         </div>
       </section>
     </>
