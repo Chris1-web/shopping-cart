@@ -3,6 +3,35 @@
   position: relative;
 }
 
+.cart {
+  background-color: white;
+  position: fixed;
+  right: 0;
+  width: 7rem;
+  height: 7rem;
+  border: 0.2rem solid black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart img {
+  width: 5rem;
+  height: 5rem;
+}
+
+.cart p {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  width: 3rem;
+  height: 3rem;
+  background-color: pink;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 2rem;
+}
+
 .products {
   padding: 2rem 1.5rem;
   display: grid;

@@ -14,7 +14,7 @@ nav ul {
   font-size: 2rem;
 }
 
-nav li:last-child {
+/* nav li:last-child {
   position: relative;
 }
 
@@ -27,7 +27,7 @@ nav li:last-child p {
   background-color: pink;
   border-radius: 50%;
   text-align: center;
-}
+} */
 
 nav .right {
   display: flex;

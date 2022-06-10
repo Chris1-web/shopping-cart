@@ -11,6 +11,7 @@ import TouristBicycle from "../images/Tourist-Bicycle.jpg";
 import TwinBicycle from "../images/Twin-Bicycle.jpg";
 import MountainBicycle from "../images/mountainBike.jpg";
 import AdultChoiceBicycle from "../images/AdultChoice.jpg";
+import cartLogo from "../images/cart-logo.png";
 
 const productsImages = [
   {
@@ -71,8 +72,8 @@ const productsImages = [
 
 export default function Products() {
   const [products, setProducts] = useState([]);
-  // const [cartProduct, setCartProduct] = useState([]);
   const [showCart, setShowCart] = useState(false);
+  // const [cartProduct, setCartProduct] = useState([]);
 
   useEffect(() => {
     setProducts([...productsImages]);
@@ -97,16 +98,22 @@ export default function Products() {
   };
 
   return (
-    <main className="products">
-      {products.map((product, index) => (
-        <ProductCard
-          product={product}
-          changeQuantity={changeQuantity}
-          addProductToCart={addProductToCart}
-          key={index}
-        />
-      ))}
-      {showCart && <Cart toggleCart={toggleCart} />}
-    </main>
+    <>
+      <div className="cart" onClick={toggleCart}>
+        <img src={cartLogo} alt="page logo" className="cart-logo" />
+        <p className="cart-product-number">1</p>
+      </div>
+      <main className="products">
+        {products.map((product, index) => (
+          <ProductCard
+            product={product}
+            changeQuantity={changeQuantity}
+            addProductToCart={addProductToCart}
+            key={index}
+          />
+        ))}
+        {showCart && <Cart toggleCart={toggleCart} />}
+      </main>
+    </>
   );
 }
