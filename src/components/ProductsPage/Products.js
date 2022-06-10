@@ -77,12 +77,13 @@ export default function Products() {
 
   useEffect(() => {
     setProducts([...productsImages]);
-    // setCartProducts([productsImages[0], productsImages[1], productsImages[2]]);
-    // console.log(cartProducts);
   }, []);
 
   const addProductToCart = (product) => {
-    console.log(product);
+    // create total cost property in product
+    setCartProducts((prevCartProduct) => {
+      return [...prevCartProduct, product];
+    });
   };
 
   const changeQuantity = (clickedProduct, newQuantity) => {
@@ -98,6 +99,16 @@ export default function Products() {
 
   const toggleCart = () => {
     showCart ? setShowCart(false) : setShowCart(true);
+    console.log(calculateCartTotal(products));
+  };
+
+  // calculate Total function
+  const calculateCartTotal = (products) => {
+    return products.reduce(
+      (prevProduct, currProduct) =>
+        prevProduct + currProduct.quantity * currProduct.price,
+      0
+    );
   };
 
   return (
