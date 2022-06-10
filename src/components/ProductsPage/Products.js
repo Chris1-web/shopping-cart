@@ -73,7 +73,7 @@ const productsImages = [
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [showCart, setShowCart] = useState(false);
-  // const [cartProduct, setCartProduct] = useState([]);
+  const [cartProduct, setCartProduct] = useState([]);
 
   useEffect(() => {
     setProducts([...productsImages]);
@@ -81,16 +81,20 @@ export default function Products() {
 
   const addProductToCart = (product) => {
     console.log(product);
+    console.log(productsImages);
   };
 
   const changeQuantity = (clickedProduct, newQuantity) => {
     if (!newQuantity || newQuantity === 0) return;
-    // get the index of the chosen product
-    const chosenProductIndex = products
-      .map((product) => product.name)
-      .indexOf(clickedProduct.name);
-    // replace current quantity with newly written quanitity
-    products[chosenProductIndex].quantity = +newQuantity;
+    const chosenProduct = products.map((product) => {
+      if (product.name === clickedProduct.name) {
+        product.quantity = +newQuantity;
+        return product;
+      }
+      return product;
+    });
+    console.log(clickedProduct);
+    console.log(chosenProduct);
   };
 
   const toggleCart = () => {

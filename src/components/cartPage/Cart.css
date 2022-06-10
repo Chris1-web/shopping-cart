@@ -108,8 +108,8 @@
 }
 
 .cart-overview-bottom img {
-  width: 10rem;
-  height: 10rem;
+  width: 15rem !important;
+  height: 15rem !important;
 }
 
 .cart-overview-bottom h3 {
