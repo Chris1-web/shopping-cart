@@ -86,7 +86,12 @@ export default function Products() {
               </div>
               {/* displays cards */}
               {cartProducts.map((product, index) => (
-                <Cart product={product} key={index} />
+                <Cart
+                  product={product}
+                  changeQuantity={changeQuantity}
+                  addProductToCart={addProductToCart}
+                  key={index}
+                />
               ))}
               {/* card checkout section styling */}
               <aside className="checkout">

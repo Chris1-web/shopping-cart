@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Counter from "../Counter";
 // import uniqid from "uniqid";
 // uniqid();
 
@@ -54,21 +55,12 @@ export default function ProductCard({
       />
       <h3>{product.name}</h3>
       <p>${product.price}</p>
-      <div className="form">
-        <button className="decrement" onClick={(e) => decreaseQuantity(e)}>
-          -
-        </button>
-        <input
-          type="number"
-          min="1"
-          value={inputValue}
-          placeholder="1"
-          onChange={(e) => changeInputQuantity(e)}
-        />
-        <button className="increment" onClick={(e) => increaseQuantity(e)}>
-          +
-        </button>
-      </div>
+      <Counter
+        decreaseQuantity={decreaseQuantity}
+        increaseQuantity={increaseQuantity}
+        changeInputQuantity={changeInputQuantity}
+        inputValue={inputValue}
+      />
       <button
         className="add-to-cart-btn"
         disabled={!inputValue || +inputValue <= 0}
