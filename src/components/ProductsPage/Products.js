@@ -1,83 +1,35 @@
 import { useEffect, useState } from "react";
-import Cart from "../cartPage/Cart";
 import "./Products.css";
 import ProductCard from "./ProductCard";
-import cheapRoadBicycle from "../images/cheap-Road-Bike.jpg";
-import KidsBicycle from "../images/Kids-Bicycle.jpg";
-import MarketBicycle from "../images/Market-Bicycle.jpg";
-import RenaissanceBicycle from "../images/Renaissance-Street-Bicycle.jpg";
-import SafeRoadBicycle from "../images/safe-road-bicycle.jpg";
-import TouristBicycle from "../images/Tourist-Bicycle.jpg";
-import TwinBicycle from "../images/Twin-Bicycle.jpg";
-import MountainBicycle from "../images/mountainBike.jpg";
-import AdultChoiceBicycle from "../images/AdultChoice.jpg";
 import cartLogo from "../images/cart-logo.png";
+import Cart from "../cartPage/Cart";
+import productsImages from "../productsImages";
 
-const productsImages = [
-  {
-    name: "Mountain Bicycle",
-    src: MountainBicycle,
-    price: 1000,
-    quantity: 1,
-  },
-  {
-    name: "Safe Road Bicycle",
-    src: SafeRoadBicycle,
-    price: 200,
-    quantity: 1,
-  },
-  {
-    name: "Renaissance Bicycle",
-    src: RenaissanceBicycle,
-    price: 1000,
-    quantity: 1,
-  },
-  {
-    name: "Kid's Bicycle",
-    src: KidsBicycle,
-    price: 200,
-    quantity: 1,
-  },
-  {
-    name: "Adult Choice Bicycle",
-    src: AdultChoiceBicycle,
-    price: 500,
-    quantity: 1,
-  },
-  {
-    name: "Twin Bicycle",
-    src: TwinBicycle,
-    price: 5000,
-    quantity: 1,
-  },
-  {
-    name: "Tourist Bicycle",
-    src: TouristBicycle,
-    price: 300,
-    quantity: 1,
-  },
-  {
-    name: "Cheap Road Bicycle",
-    src: cheapRoadBicycle,
-    price: 150,
-    quantity: 1,
-  },
-  {
-    name: "Market Bicycle",
-    src: MarketBicycle,
-    price: 500,
-    quantity: 1,
-  },
-];
+// calculate Total function
+const calculateCartTotal = (products) => {
+  return products.reduce(
+    (prevProduct, currProduct) =>
+      prevProduct + currProduct.quantity * currProduct.price,
+    0
+  );
+};
 
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [showCart, setShowCart] = useState(false);
   const [cartProducts, setCartProducts] = useState([]);
+  const [cartTotalCost, setCartTotalCost] = useState(0);
 
+  // on component mount, copy products images into products array
   useEffect(() => {
     setProducts([...productsImages]);
   }, []);
+
+  //if cart product changes update, total cost
+  useEffect(() => {
+    const cartTotalCalcutation = calculateCartTotal(cartProducts);
+    setCartTotalCost(cartTotalCalcutation);
+  }, [cartProducts]);
 
   const addProductToCart = (product) => {
     // create total cost property in product
@@ -99,16 +51,6 @@ export default function Products() {
 
   const toggleCart = () => {
     showCart ? setShowCart(false) : setShowCart(true);
-    console.log(calculateCartTotal(products));
-  };
-
-  // calculate Total function
-  const calculateCartTotal = (products) => {
-    return products.reduce(
-      (prevProduct, currProduct) =>
-        prevProduct + currProduct.quantity * currProduct.price,
-      0
-    );
   };
 
   return (
@@ -149,7 +91,7 @@ export default function Products() {
               <aside className="checkout">
                 <div className="checkout-top">
                   <p>Subtotal</p>
-                  <p className="total">$1400</p>
+                  <p className="total">${cartTotalCost}</p>
                 </div>
                 <button>Checkout</button>
               </aside>
