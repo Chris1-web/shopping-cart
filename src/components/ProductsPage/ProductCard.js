@@ -32,13 +32,11 @@ export default function ProductCard({
   const decreaseQuantity = (e) => {
     e.preventDefault();
     // do not go lower if input value is already 0
-    if (inputValue <= 0) return;
     setInputValue((prevValue) => +prevValue - 1);
     setChangeInput(true);
   };
 
   const changeInputQuantity = (e) => {
-    if (+e.target.value < 0) return;
     setInputValue(e.target.value);
     setChangeInput(true);
   };

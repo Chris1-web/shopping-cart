@@ -1,28 +1,29 @@
-import cartLogo from "../images/cart-logo.png";
 import "./Cart.css";
 import MountainBicycle from "../images/mountainBike.jpg";
 
-export default function Cart({ toggleCart }) {
-  const closeCart = () => {
-    toggleCart();
-  };
+export default function Cart({ product }) {
   return (
-    <>
+    <div className="cart-card-box">
       <div className="cart-overview-bottom">
-        <img src={MountainBicycle} alt="mountain bicycle" />
+        <img src={product.src} alt={product.name} />
         <div className="product-info">
-          <h3>Mountain Bicycle</h3>
-          <p>$1000</p>
+          <h3>{product.name}</h3>
+          <p>${product.price}</p>
         </div>
       </div>
       <div className="bottom">
         <div className="form">
           <button className="decrement">-</button>
-          <input type="number" min="1" value="2" placeholder="1" />
+          <input
+            type="number"
+            min="1"
+            value={product.quantity}
+            placeholder="1"
+          />
           <button className="increment">+</button>
         </div>
         <button className="remove-item">x Remove Item</button>
       </div>
-    </>
+    </div>
   );
 }

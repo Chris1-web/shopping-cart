@@ -115,8 +115,9 @@ export default function Products() {
             key={index}
           />
         ))}
-        {!showCart && (
+        {showCart && (
           <>
+            {/* section covers for styling */}
             <div className="overlay-background" onClick={toggleCart}></div>
             <section className="cart-section">
               <div className="cart-overview-top">
@@ -129,8 +130,9 @@ export default function Products() {
                   X Close
                 </button>
               </div>
+              {/* displays cards */}
               {cartProducts.map((product, index) => (
-                <Cart />
+                <Cart product={product} key={index} />
               ))}
             </section>
           </>
@@ -138,8 +140,4 @@ export default function Products() {
       </main>
     </>
   );
-}
-
-{
-  /* <Cart toggleCart={toggleCart} /> */
 }

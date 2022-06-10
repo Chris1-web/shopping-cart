@@ -55,7 +55,7 @@
 }
 
 .cart-section .bottom input[type="number"] {
-  width: 30%;
+  width: 50%;
   height: 3rem;
   border: none;
   text-align: center;
@@ -71,6 +71,7 @@
   border-radius: 2px;
   box-shadow: 0.2rem 0.2rem 0.5rem #0c4b23;
   font-size: 2rem;
+  /* here  */
 }
 
 .cart-overview-top img {
@@ -118,4 +119,10 @@
 
 .cart-overview-bottom p {
   font-size: 2rem;
+}
+
+.cart-card-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
