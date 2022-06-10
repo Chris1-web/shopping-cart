@@ -73,28 +73,27 @@ const productsImages = [
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [showCart, setShowCart] = useState(false);
-  const [cartProduct, setCartProduct] = useState([]);
+  const [cartProducts, setCartProducts] = useState([]);
 
   useEffect(() => {
     setProducts([...productsImages]);
+    setCartProducts([productsImages[0], productsImages[1], productsImages[2]]);
+    console.log(cartProducts);
   }, []);
 
   const addProductToCart = (product) => {
     console.log(product);
-    console.log(productsImages);
   };
 
   const changeQuantity = (clickedProduct, newQuantity) => {
-    if (!newQuantity || newQuantity === 0) return;
-    const chosenProduct = products.map((product) => {
+    const editedProduct = products.map((product) => {
       if (product.name === clickedProduct.name) {
         product.quantity = +newQuantity;
         return product;
       }
       return product;
     });
-    console.log(clickedProduct);
-    console.log(chosenProduct);
+    setProducts([...editedProduct]);
   };
 
   const toggleCart = () => {
@@ -116,8 +115,31 @@ export default function Products() {
             key={index}
           />
         ))}
-        {showCart && <Cart toggleCart={toggleCart} />}
+        {!showCart && (
+          <>
+            <div className="overlay-background" onClick={toggleCart}></div>
+            <section className="cart-section">
+              <div className="cart-overview-top">
+                <div className="cart">
+                  <img src={cartLogo} alt="cart logo" className="cart-logo" />
+                  <p className="cart-product-number">1</p>
+                </div>
+                <h2>CART OVERVIEW</h2>
+                <button className="close" onClick={toggleCart}>
+                  X Close
+                </button>
+              </div>
+              {cartProducts.map((product, index) => (
+                <Cart />
+              ))}
+            </section>
+          </>
+        )}
       </main>
     </>
   );
+}
+
+{
+  /* <Cart toggleCart={toggleCart} /> */
 }

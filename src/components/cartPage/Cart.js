@@ -8,34 +8,21 @@ export default function Cart({ toggleCart }) {
   };
   return (
     <>
-      <div className="overlay-background" onClick={closeCart}></div>
-      <section className="cart-section">
-        <div className="cart-overview-top">
-          <div className="cart">
-            <img src={cartLogo} alt="cart logo" className="cart-logo" />
-            <p className="cart-product-number">1</p>
-          </div>
-          <h2>CART OVERVIEW</h2>
-          <button className="close" onClick={closeCart}>
-            X Close
-          </button>
+      <div className="cart-overview-bottom">
+        <img src={MountainBicycle} alt="mountain bicycle" />
+        <div className="product-info">
+          <h3>Mountain Bicycle</h3>
+          <p>$1000</p>
         </div>
-        <div className="cart-overview-bottom">
-          <img src={MountainBicycle} alt="mountain bicycle" />
-          <div className="product-info">
-            <h3>Mountain Bicycle</h3>
-            <p>$1000</p>
-          </div>
+      </div>
+      <div className="bottom">
+        <div className="form">
+          <button className="decrement">-</button>
+          <input type="number" min="1" value="2" placeholder="1" />
+          <button className="increment">+</button>
         </div>
-        <div className="bottom">
-          <div className="form">
-            <button className="decrement">-</button>
-            <input type="number" min="1" value="2" placeholder="1" />
-            <button className="increment">+</button>
-          </div>
-          <button className="remove-item">x Remove Item</button>
-        </div>
-      </section>
+        <button className="remove-item">x Remove Item</button>
+      </div>
     </>
   );
 }
