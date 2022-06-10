@@ -74,8 +74,8 @@
 }
 
 .cart-overview-top img {
-  width: 4rem;
-  height: 4rem;
+  width: 4rem !important;
+  height: 4rem !important;
 }
 
 .cart-overview-top .close,

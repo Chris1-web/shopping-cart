@@ -3,15 +3,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../images/logo.png";
 import cartLogo from "../images/cart-logo.png";
-import Cart from "../cartPage/Cart";
 
 const Nav = () => {
-  const [showCart, setShowCart] = useState(false);
-
-  const toggleCart = () => {
-    showCart ? setShowCart(false) : setShowCart(true);
-  };
-
   return (
     <>
       <nav>
@@ -33,7 +26,7 @@ const Nav = () => {
             </li>
             <li>
               <Link to="shop">
-                <div className="cart" onClick={toggleCart}>
+                <div className="cart">
                   <img src={cartLogo} alt="page logo" className="cart-logo" />
                   <p className="cart-product-number">1</p>
                 </div>
@@ -42,7 +35,6 @@ const Nav = () => {
           </div>
         </ul>
       </nav>
-      {showCart && <Cart toggleCart={toggleCart} />}
     </>
   );
 };

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Cart from "../cartPage/Cart";
 import "./Products.css";
 import ProductCard from "./ProductCard";
 import cheapRoadBicycle from "../images/cheap-Road-Bike.jpg";
@@ -71,6 +72,7 @@ const productsImages = [
 export default function Products() {
   const [products, setProducts] = useState([]);
   // const [cartProduct, setCartProduct] = useState([]);
+  const [showCart, setShowCart] = useState(false);
 
   useEffect(() => {
     setProducts([...productsImages]);
@@ -87,7 +89,11 @@ export default function Products() {
       .map((product) => product.name)
       .indexOf(clickedProduct.name);
     // replace current quantity with newly written quanitity
-    products[chosenProductIndex].quantity = Number(newQuantity);
+    products[chosenProductIndex].quantity = +newQuantity;
+  };
+
+  const toggleCart = () => {
+    showCart ? setShowCart(false) : setShowCart(true);
   };
 
   return (
@@ -100,6 +106,7 @@ export default function Products() {
           key={index}
         />
       ))}
+      {showCart && <Cart toggleCart={toggleCart} />}
     </main>
   );
 }

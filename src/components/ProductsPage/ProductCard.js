@@ -33,7 +33,6 @@ export default function ProductCard({
     e.preventDefault();
     // do not go lower if input value is already 0
     if (inputValue <= 0) return;
-    console.log(inputValue);
     setInputValue((prevValue) => +prevValue - 1);
     setChangeInput(true);
   };
