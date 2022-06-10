@@ -77,8 +77,8 @@ export default function Products() {
 
   useEffect(() => {
     setProducts([...productsImages]);
-    setCartProducts([productsImages[0], productsImages[1], productsImages[2]]);
-    console.log(cartProducts);
+    // setCartProducts([productsImages[0], productsImages[1], productsImages[2]]);
+    // console.log(cartProducts);
   }, []);
 
   const addProductToCart = (product) => {
@@ -134,6 +134,14 @@ export default function Products() {
               {cartProducts.map((product, index) => (
                 <Cart product={product} key={index} />
               ))}
+              {/* card checkout section */}
+              <aside className="checkout">
+                <div className="checkout-top">
+                  <p>Subtotal</p>
+                  <p className="total">$1400</p>
+                </div>
+                <button>Checkout</button>
+              </aside>
             </section>
           </>
         )}

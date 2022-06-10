@@ -1,5 +1,4 @@
 import "./Cart.css";
-import MountainBicycle from "../images/mountainBike.jpg";
 
 export default function Cart({ product }) {
   return (
