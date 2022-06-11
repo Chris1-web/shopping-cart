@@ -14,6 +14,13 @@ const calculateCartTotal = (products) => {
   );
 };
 
+const calculateCartQuantity = (products) => {
+  return products.reduce(
+    (prevProduct, currProduct) => prevProduct + currProduct.quantity,
+    0
+  );
+};
+
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [showCart, setShowCart] = useState(false);
@@ -26,7 +33,8 @@ export default function Products() {
   }, []);
 
   useEffect(() => {
-    setCartCount(cartProducts.length);
+    setCartCount(calculateCartQuantity(cartProducts));
+    console.log("here");
   }, [cartProducts]);
 
   const addProductToCart = (product) => {
@@ -38,14 +46,16 @@ export default function Products() {
   };
 
   const changeQuantity = (clickedProduct, newQuantity) => {
-    const editedProduct = products.map((product) => {
+    // edit products is in cart
+    const editedProduct = cartProducts.map((product) => {
       if (product.name === clickedProduct.name) {
         product.quantity = +newQuantity;
         return product;
       }
       return product;
     });
-    setProducts([...editedProduct]);
+    console.log("here");
+    setCartProducts([...editedProduct]);
   };
 
   const removeProductFromCart = (clickedProduct) => {
