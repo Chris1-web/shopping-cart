@@ -34,15 +34,25 @@ export default function Products() {
 
   useEffect(() => {
     setCartCount(calculateCartQuantity(cartProducts));
-    console.log("here");
   }, [cartProducts]);
 
-  const addProductToCart = (product) => {
-    // if product is already in cart, do not create a new product
-    if (cartProducts.includes(product)) return;
-    setCartProducts((prevCartProduct) => {
-      return [...prevCartProduct, product];
-    });
+  const addProductToCart = (clickedProduct) => {
+    // if product is in cart, get it and edit the product
+    // else create new product and add to existing products in cart
+    if (cartProducts.includes(clickedProduct)) {
+      const editedProduct = cartProducts.map((product) => {
+        if (product.name === clickedProduct.name) {
+          product.quantity += 1;
+          return product;
+        }
+        return product;
+      });
+      setCartProducts([...editedProduct]);
+    } else {
+      setCartProducts((prevCartProduct) => {
+        return [...prevCartProduct, clickedProduct];
+      });
+    }
   };
 
   const changeQuantity = (clickedProduct, newQuantity) => {
@@ -54,7 +64,6 @@ export default function Products() {
       }
       return product;
     });
-    console.log("here");
     setCartProducts([...editedProduct]);
   };
 
