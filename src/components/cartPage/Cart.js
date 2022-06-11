@@ -2,7 +2,11 @@ import "./Cart.css";
 import { useEffect, useState } from "react";
 import Counter from "../Counter";
 
-export default function Cart({ product, changeQuantity }) {
+export default function Cart({
+  product,
+  changeQuantity,
+  removeProductFromCart,
+}) {
   const [inputValue, setInputValue] = useState("");
   const [changeInput, setChangeInput] = useState(false);
 
@@ -36,6 +40,11 @@ export default function Cart({ product, changeQuantity }) {
     setInputValue(e.target.value);
     setChangeInput(true);
   };
+
+  const removeProduct = (e) => {
+    removeProductFromCart(product);
+  };
+
   return (
     <div className="cart-card-box">
       <div className="cart-overview-bottom">
@@ -52,7 +61,9 @@ export default function Cart({ product, changeQuantity }) {
           changeInputQuantity={changeInputQuantity}
           inputValue={inputValue}
         />
-        <button className="remove-item">x Remove Item</button>
+        <button className="remove-item" onClick={(e) => removeProduct(e)}>
+          x Remove Item
+        </button>
       </div>
     </div>
   );

@@ -14,22 +14,20 @@ const calculateCartTotal = (products) => {
   );
 };
 
-const calculateCartQuantity = (products) => {
-  return products.reduce(
-    (prevProduct, currProduct) => prevProduct + currProduct.quantity,
-    0
-  );
-};
-
 export default function Products() {
   const [products, setProducts] = useState([]);
   const [showCart, setShowCart] = useState(false);
   const [cartProducts, setCartProducts] = useState([]);
+  const [cartCount, setCartCount] = useState(0);
 
   // on component mount, copy products images into products array
   useEffect(() => {
     setProducts([...productsImages]);
   }, []);
+
+  useEffect(() => {
+    setCartCount(cartProducts.length);
+  }, [cartProducts]);
 
   const addProductToCart = (product) => {
     // if product is already in cart, do not create a new product
@@ -50,6 +48,12 @@ export default function Products() {
     setProducts([...editedProduct]);
   };
 
+  const removeProductFromCart = (clickedProduct) => {
+    setCartProducts(
+      cartProducts.filter((product) => product.name !== clickedProduct.name)
+    );
+  };
+
   const toggleCart = () => {
     showCart ? setShowCart(false) : setShowCart(true);
   };
@@ -58,7 +62,7 @@ export default function Products() {
     <>
       <div className="cart" onClick={toggleCart}>
         <img src={cartLogo} alt="page logo" className="cart-logo" />
-        <p className="cart-product-number">{cartProducts.length}</p>
+        <p className="cart-product-number">{cartCount}</p>
       </div>
       <main className="products">
         {products.map((product, index) => (
@@ -76,7 +80,7 @@ export default function Products() {
               <div className="cart-overview-top">
                 <div className="cart">
                   <img src={cartLogo} alt="cart logo" className="cart-logo" />
-                  <p className="cart-product-number">1</p>
+                  <p className="cart-product-number">{cartCount}</p>
                 </div>
                 <h2>CART OVERVIEW</h2>
                 <button className="close" onClick={toggleCart}>
@@ -88,7 +92,7 @@ export default function Products() {
                 <Cart
                   product={product}
                   changeQuantity={changeQuantity}
-                  addProductToCart={addProductToCart}
+                  removeProductFromCart={removeProductFromCart}
                   key={index}
                 />
               ))}
