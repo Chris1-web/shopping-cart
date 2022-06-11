@@ -16,6 +16,7 @@ export default function Cart({
   }, []);
 
   useEffect(() => {
+    console.log(inputValue);
     if (changeInput) {
       changeQuantity(product, inputValue);
       setChangeInput(false);
@@ -41,7 +42,7 @@ export default function Cart({
     setChangeInput(true);
   };
 
-  const removeProduct = (e) => {
+  const removeProduct = () => {
     removeProductFromCart(product);
   };
 
@@ -61,7 +62,7 @@ export default function Cart({
           changeInputQuantity={changeInputQuantity}
           inputValue={inputValue}
         />
-        <button className="remove-item" onClick={(e) => removeProduct(e)}>
+        <button className="remove-item" onClick={() => removeProduct()}>
           x Remove Item
         </button>
       </div>

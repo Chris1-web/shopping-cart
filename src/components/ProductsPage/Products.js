@@ -49,6 +49,18 @@ export default function Products() {
   };
 
   const removeProductFromCart = (clickedProduct) => {
+    // return the product quanity in products array to 1;
+    setProducts(
+      products.map((product) => {
+        if (product.name === clickedProduct.name) {
+          product.quantity = 1;
+          return product;
+        }
+        return product;
+      })
+    );
+
+    // filter the cart products to return only non removed products
     setCartProducts(
       cartProducts.filter((product) => product.name !== clickedProduct.name)
     );
