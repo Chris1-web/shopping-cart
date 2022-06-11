@@ -16,7 +16,6 @@ export default function Cart({
   }, []);
 
   useEffect(() => {
-    console.log(inputValue);
     if (changeInput) {
       changeQuantity(product, inputValue);
       setChangeInput(false);
