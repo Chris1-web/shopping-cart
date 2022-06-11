@@ -1,0 +1,213 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App component renders products page 1`] = `
+<div>
+  <div
+    class="cart"
+  >
+    <img
+      alt="page logo"
+      class="cart-logo"
+      src="cart-logo.png"
+    />
+    <p
+      class="cart-product-number"
+    >
+      0
+    </p>
+  </div>
+  <main
+    class="products"
+  >
+    <article
+      class="product-card"
+    >
+      <img
+        alt="Mountain Bicycle"
+        class="product-card-image"
+        src="mountainBike.jpg"
+      />
+      <h3>
+        Mountain Bicycle
+      </h3>
+      <p>
+        $
+        1000
+      </p>
+      <button
+        class="add-to-cart-btn"
+      >
+        Add To Cart
+      </button>
+    </article>
+    <article
+      class="product-card"
+    >
+      <img
+        alt="Safe Road Bicycle"
+        class="product-card-image"
+        src="safe-road-bicycle.jpg"
+      />
+      <h3>
+        Safe Road Bicycle
+      </h3>
+      <p>
+        $
+        200
+      </p>
+      <button
+        class="add-to-cart-btn"
+      >
+        Add To Cart
+      </button>
+    </article>
+    <article
+      class="product-card"
+    >
+      <img
+        alt="Renaissance Bicycle"
+        class="product-card-image"
+        src="Renaissance-Street-Bicycle.jpg"
+      />
+      <h3>
+        Renaissance Bicycle
+      </h3>
+      <p>
+        $
+        1000
+      </p>
+      <button
+        class="add-to-cart-btn"
+      >
+        Add To Cart
+      </button>
+    </article>
+    <article
+      class="product-card"
+    >
+      <img
+        alt="Kid's Bicycle"
+        class="product-card-image"
+        src="Kids-Bicycle.jpg"
+      />
+      <h3>
+        Kid's Bicycle
+      </h3>
+      <p>
+        $
+        200
+      </p>
+      <button
+        class="add-to-cart-btn"
+      >
+        Add To Cart
+      </button>
+    </article>
+    <article
+      class="product-card"
+    >
+      <img
+        alt="Adult Choice Bicycle"
+        class="product-card-image"
+        src="AdultChoice.jpg"
+      />
+      <h3>
+        Adult Choice Bicycle
+      </h3>
+      <p>
+        $
+        500
+      </p>
+      <button
+        class="add-to-cart-btn"
+      >
+        Add To Cart
+      </button>
+    </article>
+    <article
+      class="product-card"
+    >
+      <img
+        alt="Twin Bicycle"
+        class="product-card-image"
+        src="Twin-Bicycle.jpg"
+      />
+      <h3>
+        Twin Bicycle
+      </h3>
+      <p>
+        $
+        5000
+      </p>
+      <button
+        class="add-to-cart-btn"
+      >
+        Add To Cart
+      </button>
+    </article>
+    <article
+      class="product-card"
+    >
+      <img
+        alt="Tourist Bicycle"
+        class="product-card-image"
+        src="Tourist-Bicycle.jpg"
+      />
+      <h3>
+        Tourist Bicycle
+      </h3>
+      <p>
+        $
+        300
+      </p>
+      <button
+        class="add-to-cart-btn"
+      >
+        Add To Cart
+      </button>
+    </article>
+    <article
+      class="product-card"
+    >
+      <img
+        alt="Cheap Road Bicycle"
+        class="product-card-image"
+        src="cheap-Road-Bike.jpg"
+      />
+      <h3>
+        Cheap Road Bicycle
+      </h3>
+      <p>
+        $
+        150
+      </p>
+      <button
+        class="add-to-cart-btn"
+      >
+        Add To Cart
+      </button>
+    </article>
+    <article
+      class="product-card"
+    >
+      <img
+        alt="Market Bicycle"
+        class="product-card-image"
+        src="Market-Bicycle.jpg"
+      />
+      <h3>
+        Market Bicycle
+      </h3>
+      <p>
+        $
+        500
+      </p>
+      <button
+        class="add-to-cart-btn"
+      >
+        Add To Cart
+      </button>
+    </article>
+  </main>
+</div>
+`;
