@@ -146,3 +146,15 @@
   display: flex;
   justify-content: space-between;
 }
+
+.form button:disabled {
+  background-color: #cccccc !important;
+  color: #6d937b;
+}
+
+.product-card button:disabled:hover {
+  background-color: #6d937b;
+  color: #cccccc;
+  cursor: not-allowed !important;
+  box-shadow: none;
+}

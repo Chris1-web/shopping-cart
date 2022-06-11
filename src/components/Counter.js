@@ -6,7 +6,11 @@ export default function Counter({
 }) {
   return (
     <div className="form">
-      <button className="decrement" onClick={(e) => decreaseQuantity(e)}>
+      <button
+        className="decrement"
+        disabled={!inputValue || +inputValue <= 0}
+        onClick={(e) => decreaseQuantity(e)}
+      >
         -
       </button>
       <input
@@ -16,7 +20,11 @@ export default function Counter({
         placeholder="1"
         onChange={(e) => changeInputQuantity(e)}
       />
-      <button className="increment" onClick={(e) => increaseQuantity(e)}>
+      <button
+        className="increment"
+        // disabled={!inputValue || +inputValue <= 0}
+        onClick={(e) => increaseQuantity(e)}
+      >
         +
       </button>
     </div>

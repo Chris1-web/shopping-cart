@@ -64,7 +64,6 @@ export default function Products() {
         {products.map((product, index) => (
           <ProductCard
             product={product}
-            changeQuantity={changeQuantity}
             addProductToCart={addProductToCart}
             key={index}
           />

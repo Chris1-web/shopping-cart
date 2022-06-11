@@ -52,16 +52,6 @@ export default function Cart({ product, changeQuantity }) {
           changeInputQuantity={changeInputQuantity}
           inputValue={inputValue}
         />
-        {/* <div className="form">
-          <button className="decrement">-</button>
-          <input
-            type="number"
-            min="1"
-            value={product.quantity}
-            placeholder="1"
-          />
-          <button className="increment">+</button>
-        </div> */}
         <button className="remove-item">x Remove Item</button>
       </div>
     </div>
