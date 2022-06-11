@@ -3,6 +3,7 @@ import "./About.css";
 export default function About() {
   return (
     <main className="about-page">
+      <h4 style={{ textAlign: "center" }}>About Us</h4>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
         tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
