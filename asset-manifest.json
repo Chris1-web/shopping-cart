@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/shopping-cart/static/css/main.a30e4d86.css",
+    "main.js": "/shopping-cart/static/js/main.7adb587b.js",
+    "static/media/mountain-bicycle.jpg": "/shopping-cart/static/media/mountain-bicycle.fdbba33eca5e1e36c5ea.jpg",
+    "static/media/Tourist-Bicycle.jpg": "/shopping-cart/static/media/Tourist-Bicycle.a9916c313152f8903152.jpg",
+    "static/media/Renaissance-Street-Bicycle.jpg": "/shopping-cart/static/media/Renaissance-Street-Bicycle.a085b8d4d9b86c475ab8.jpg",
+    "static/media/Kids-Bicycle.jpg": "/shopping-cart/static/media/Kids-Bicycle.0212259be5753ff85660.jpg",
+    "static/media/Twin-Bicycle.jpg": "/shopping-cart/static/media/Twin-Bicycle.e6718e70f9cf237202cd.jpg",
+    "static/media/cheap-Road-Bike.jpg": "/shopping-cart/static/media/cheap-Road-Bike.4a7007d76420ec523708.jpg",
+    "static/media/Market-Bicycle.jpg": "/shopping-cart/static/media/Market-Bicycle.f3ab8afececc4e758e3e.jpg",
+    "static/media/mountainBike.jpg": "/shopping-cart/static/media/mountainBike.b4236c0dcade368c37e1.jpg",
+    "static/media/AdultChoice.jpg": "/shopping-cart/static/media/AdultChoice.dc21b5d4605a6a1f9a60.jpg",
+    "static/media/safe-road-bicycle.jpg": "/shopping-cart/static/media/safe-road-bicycle.d82935cba35dc45dc65c.jpg",
+    "static/media/logo.png": "/shopping-cart/static/media/logo.ea0e61ac4c81914b853c.png",
+    "index.html": "/shopping-cart/index.html",
+    "main.a30e4d86.css.map": "/shopping-cart/static/css/main.a30e4d86.css.map",
+    "main.7adb587b.js.map": "/shopping-cart/static/js/main.7adb587b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a30e4d86.css",
+    "static/js/main.7adb587b.js"
+  ]
+}
