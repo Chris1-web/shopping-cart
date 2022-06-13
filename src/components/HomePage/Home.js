@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import Footer from "../Footer/Footer";
 import heroImage from "../images/mountain-bicycle.jpg";
 import "./Home.css";
 
@@ -14,6 +15,7 @@ const Home = () => {
         <h1>KING OF THE ROAD</h1>
         <Link to="shop">SHOP NOW</Link>
       </div>
+      <Footer />
     </main>
   );
 };

@@ -1,0 +1,26 @@
+footer {
+  position: absolute;
+  top: 95%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.contact-github-icon {
+  width: 1.8rem;
+  height: auto;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+}
