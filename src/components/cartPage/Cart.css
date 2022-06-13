@@ -1,3 +1,13 @@
+.cart-section {
+  width: 45%;
+  height: 100vh;
+  top: 0%;
+  right: 0%;
+  background-color: white;
+  position: fixed;
+  overflow: scroll;
+}
+
 .overlay-background {
   position: absolute;
   top: 0%;
@@ -34,16 +44,6 @@
 
 .cart-overview-top h2 {
   font-size: 1.8rem;
-}
-
-.cart-section {
-  width: 45%;
-  height: 100vh;
-  top: 0%;
-  right: 0%;
-  background-color: white;
-  position: fixed;
-  overflow: scroll;
 }
 
 .cart-section .bottom {
