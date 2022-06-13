@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/shopping-cart/static/css/main.a30e4d86.css",
-    "main.js": "/shopping-cart/static/js/main.7adb587b.js",
+    "main.js": "/shopping-cart/static/js/main.f73fa56c.js",
     "static/media/mountain-bicycle.jpg": "/shopping-cart/static/media/mountain-bicycle.fdbba33eca5e1e36c5ea.jpg",
     "static/media/Tourist-Bicycle.jpg": "/shopping-cart/static/media/Tourist-Bicycle.a9916c313152f8903152.jpg",
     "static/media/Renaissance-Street-Bicycle.jpg": "/shopping-cart/static/media/Renaissance-Street-Bicycle.a085b8d4d9b86c475ab8.jpg",
@@ -15,10 +15,10 @@
     "static/media/logo.png": "/shopping-cart/static/media/logo.ea0e61ac4c81914b853c.png",
     "index.html": "/shopping-cart/index.html",
     "main.a30e4d86.css.map": "/shopping-cart/static/css/main.a30e4d86.css.map",
-    "main.7adb587b.js.map": "/shopping-cart/static/js/main.7adb587b.js.map"
+    "main.f73fa56c.js.map": "/shopping-cart/static/js/main.f73fa56c.js.map"
   },
   "entrypoints": [
     "static/css/main.a30e4d86.css",
-    "static/js/main.7adb587b.js"
+    "static/js/main.f73fa56c.js"
   ]
 }
