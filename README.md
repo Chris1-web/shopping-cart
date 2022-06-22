@@ -7,6 +7,8 @@ and it would have prevented props drilling, which occured frequqently in this pr
 I was able to write and pass tests for small components; however, for larger componenets, I had to rely on
 toMatchSnapshot methods.
 
+I was also motivated to learn SASS or styled components, as it is obvious I am going to need it for larger projects.
+
 App
 -----Nav
 -----Home
